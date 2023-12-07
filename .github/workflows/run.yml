@@ -5,5 +5,8 @@ jobs:
     steps:
       - uses: actions/setup-python@v2
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.UBERSHMEKEL_ALT_TOKEN }}
       - uses: actions/cache@v2
       - run: python main.py
